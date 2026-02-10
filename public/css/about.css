@@ -1,0 +1,63 @@
+.main_about {
+  background-color: #FBF5FF;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.team_description {
+  color: #364153;
+  background-color: #FEFDFF;
+  border-radius: 15px;
+  margin: 30px;
+  padding: 30px;
+  box-shadow: 1px 1px 5px 1px #c0bebe;
+}
+
+.about_header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  margin: 30px;
+}
+
+.team_card {
+  display: flex;
+  border-radius: 15px;
+  background-color: #FEFDFF;
+  box-shadow: 1px 1px 5px 1px #c0bebe;
+}
+
+.member_image_container img {
+  border-radius: 15px 0 0 15px;
+}
+
+.member_info {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 30px;
+}
+
+.team_member_name {
+ font-weight: bold;
+ letter-spacing: 2px;
+}
+
+.team_memeber_role {
+  color: #9A16F6;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.team_memeber_bio {
+  line-height: 20px;
+  font-size: 0.8rem;
+}
