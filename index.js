@@ -1,30 +1,27 @@
 import express from 'express';
-import teamMembers from './data/team_member_details.js';
+// import teamMembers from './data/team_member_details.js';
+import gadgetDetails from './data/gadget_details.js';
+
 import * as path from 'path';
 import 'dotenv/config';
 
-const app = express()
+const app = express();
 const port = process.env.PORT;
-const __dirname = path.resolve()
+const __dirname = path.resolve();
 
-app.set("view engine", "ejs")
-app.set("views",path.join(__dirname,"views"));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-app.use(express.static("public"))
+app.use(express.static('public'));
+app.locals.gadgetDetails = gadgetDetails;
+app.get('/', (req, res) => {
+  res.render(path.join(__dirname, '/views/pages/index.ejs'), {
+    headTitle: 'Home',
+  });
+});
 
-app.get("/", (req, res) => {
-  res.render(path.join(__dirname, "/views/pages/index"),
-  {
-    headTitle: "home",
+app.get('/beauty', (req, res) => {
+  res.render('pages/gadgets');
+});
 
-  }
-
-)
-})
-
-app.get("/beauty",(req,res)=>{
-
-  res.render("pages/gadgets")
-})
-
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -1,9 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
-</html>
+<%
+  const categories = [];
+
+  for (let i = 0; i < gadgetDetails.length; i++) {
+    if (categories.indexOf(gadgetDetails[i].category) === -1) {
+      categories.push(gadgetDetails[i].category);
+    }
+  }
+%>
+
+<ul class="sidebar_catogery">
+  <% categories.forEach(el =>{ %>
+    <li class="catogery_link"><%= el %></li>
+  <%
+ })
+  %>
+</ul>
