@@ -4,10 +4,11 @@ import * as path from "path"
 import "dotenv/config"
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT;
 const __dirname = path.resolve()
 
 app.set("view engine", "ejs")
+app.set("views",path.join(__dirname,"views"));
 
 app.use(express.static("public"))
 
@@ -18,6 +19,11 @@ app.get("/", (req, res) => {
   }
 
 )
+})
+
+app.get("/beauty",(req,res)=>{
+
+  res.render("pages/gadgets")
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`))
