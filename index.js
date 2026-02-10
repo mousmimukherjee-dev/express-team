@@ -1,4 +1,7 @@
-import express from "express"
+import express from 'express';
+import teamMembers from './data/team_member_details.js';
+import * as path from 'path';
+import 'dotenv/config';
 
 import * as path from "path"
 import "dotenv/config"
