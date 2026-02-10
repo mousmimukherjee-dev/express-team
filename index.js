@@ -3,7 +3,7 @@ import express from "express"
 import * as path from "path"
 
 const app = express()
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT;
 const __dirname = path.resolve()
 
 app.use(express.static("public"))
@@ -24,4 +24,4 @@ app.get("/beauty",(req,res)=>{
   res.render("pages/gadgets")
 })
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
+app.listen(port, () => console.log(`Listening on port ${port}`))
