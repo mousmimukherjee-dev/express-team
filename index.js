@@ -24,7 +24,9 @@ app.get("/", (req, res) => {
 
 app.get("/beauty",(req,res)=>{
 
-  res.render("pages/gadgets")
+  res.render("pages/gadgets",{
+    headTitle : "beauty"
+  })
 })
 
 app.listen(port, () => console.log(`Listening on port ${port}`))
