@@ -3,9 +3,6 @@ import teamMembers from './data/team_member_details.js';
 import * as path from 'path';
 import 'dotenv/config';
 
-import * as path from "path"
-import "dotenv/config"
-
 const app = express()
 const port = process.env.PORT;
 const __dirname = path.resolve()
