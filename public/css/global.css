@@ -1,0 +1,26 @@
+/* :root {
+  --nav-background-green: #425230;
+  --nav-dark-black: #14190a;
+  --nav-hover-text: #e4e5d8;
+  --white-color: #ffffff;
+  --background-body-offwhite: #fcfbf5;
+  --dark-grey: #787c70;
+  --medium-grey: #c9c9c0;
+  --light-grey: #ddded7;
+  --footer-background-green: #3c4230;
+} */
+
+*{
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+
+  padding: 3rem;
+  background: linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+  display: flex;
+  justify-content: space-between;
+}
