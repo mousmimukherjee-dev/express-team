@@ -1,6 +1,10 @@
 import express from 'express';
 import aboutRouter from './routes/about.js';
 import { homepageDescription } from './data/team_member_details.js';
+import teamMembers from './data/team_member_details.js';
+import technicalRouter from './routes/technical.js';
+import vehicleRouter from './routes/vehicle.js';
+import beautyRouter from './routes/beauty.js';
 import * as path from 'path';
 import 'dotenv/config';
 
@@ -25,9 +29,8 @@ app.get("/", (req, res) => {
 )
 })
 
-app.get("/beauty",(req,res)=>{
-
-  res.render("pages/gadgets")
-})
+app.use("/technical", technicalRouter)
+app.use("/vehicle", vehicleRouter)
+app.use("/beauty", beautyRouter)
 
 app.listen(port, () => console.log(`Listening on port ${port}`))
