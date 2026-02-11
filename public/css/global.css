@@ -50,7 +50,91 @@ nav a:hover {
 .hide {
   display: none;
 }
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  padding: 1rem 2rem;
+  background: linear-gradient(
+    90deg,
+    hsla(339, 100%, 55%, 1) 0%,
+    hsla(197, 100%, 64%, 1) 100%
+  );
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  padding: 2rem;
+  border: solid 1px black;
+  /* background-color: #f4f4f4; */
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #f4f4f4;
+  padding: 1.5rem;
+}
+.sidebar_catogery {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.catogery_link {
+  padding: 10px 30px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    hsla(339, 100%, 55%, 1) 0%,
+    hsla(197, 100%, 64%, 1) 100%
+  );
+  margin: 1rem;
+}
+.content {
+  flex: 1;
+  background: linear-gradient(
+    90deg,
+    hsla(339, 100%, 55%, 1) 0%,
+    hsla(197, 100%, 64%, 1) 100%
+  );
+  padding: 2rem;
+  border: solid 1px black;
+  padding-left: 1rem;
+  margin-left: 2rem;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
 
 
 @media screen and (max-width: 768px) {
