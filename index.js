@@ -1,8 +1,11 @@
 import express from 'express';
 import gadgetDetails from './data/gadget_details.js';
+import { homepageDescription } from './data/team_member_details.js';
+
 import technicalRouter from './routes/technical.js';
 import vehicleRouter from './routes/vehicle.js';
 import beautyRouter from './routes/beauty.js';
+
 import * as path from 'path';
 import 'dotenv/config';
 
@@ -19,6 +22,7 @@ app.locals.gadgetDetails = gadgetDetails;
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/views/pages/index'), {
     headTitle: 'home',
+    homepageContent: homepageDescription,
   });
 });
 
