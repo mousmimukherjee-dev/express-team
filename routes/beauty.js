@@ -2,8 +2,20 @@ import express from "express"
 import * as path from "path";
 import gadgetDetails from "../data/gadget_details.js";
 
-const beautyRouter = express.Router()
-const __dirname = path.resolve()
+const beautyRouter = express.Router();
+const __dirname = path.resolve();
+
+beautyRouter.get('/', (req, res) => {
+  const allItems = req.app.locals.gadgetDetails;
+  const filteredItems = allItems.filter((item) => {
+    return item.category === 'beauty';
+  });
+  res.render(path.join(__dirname, '/views/pages/category'), {
+    headTitle: 'beauty',
+    items: filteredItems,
+    category: 'Beauty',
+  });
+});
 
 beautyRouter.get("/", (req, res) => {
     res.render("pages/beauty",
