@@ -1,16 +1,20 @@
-import express from "express"
-import * as path from "path"
+import express from 'express';
+import * as path from 'path';
 
-const vehicleRouter = express.Router()
-const __dirname = path.resolve()
+const vehicleRouter = express.Router();
+const __dirname = path.resolve();
 
-vehicleRouter.get("/", (req, res) => {
-    res.render(path.join(__dirname, "/views/pages/category"),
-    {
-      headTitle: "vehicle",
-      
-    }
-  )
-})
+vehicleRouter.get('/', (req, res) => {
+  const allItems = req.app.locals.gadgetDetails;
+  const filteredItems = allItems.filter((item) => {
+    return item.category === 'vehicle';
+  });
 
-export default vehicleRouter
+  res.render(path.join(__dirname, '/views/pages/category'), {
+    headTitle: 'vehicle',
+    items: filteredItems,
+    category: 'Vehicle',
+  });
+});
+
+export default vehicleRouter;
