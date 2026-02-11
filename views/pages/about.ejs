@@ -1,19 +1,30 @@
-<<<<<<< HEAD
-<%- include("../partials/head") %><div class="team">
-=======
-<div class="team">
->>>>>>> feature/011-category-page
-  <% teamMembers.forEach(member => { %>
-    <div class="team-card">
-      <img src="<%= member.image %>" alt="<%= member.name %>">
-      <h3><%= member.name %></h3>
-      <p><%= member.role %></p>
-      <p><%= member.bio %></p>
-    </div>
-  <% }) %>
-<<<<<<< HEAD
-</div>
-=======
-</div>
 <%- include("../partials/head") %>
->>>>>>> feature/011-category-page
+<body>
+<%- include("../partials/header") %>
+<main class="main_about">
+  <div class="team_description">
+  <% if (aboutTeam) {%>
+      <h1 class="about_header"><%= aboutTeam.header %></h3>
+      <p class="about_description"><%= aboutTeam.content %></p>
+ <% } %>
+  </div>
+  <div class="team">
+    <% if (teamList) {%>
+    <% teamList.forEach(member => { %>
+      <div class="team_card">
+        <div class="member_image_container">
+          <img src="<%= member.image %>" alt="<%= member.name %>" height="200px" width="auto">
+        </div>
+        <div class="member_info">
+          <h3 class="team_member_name"><%= member.name %></h3>
+          <p class="team_memeber_role"><%= member.role %></p>
+          <p class="team_memeber_bio"><%= member.bio %></p>
+        </div>
+      </div>
+    <% }) %>
+  <% } %>
+  </div>
+</main>
+<%- include("../partials/footer") %>
+</body>
+</html>
