@@ -19,14 +19,14 @@ app.use(express.static("public"));
 app.use('/about', aboutRouter);
 
 app.get("/", (req, res) => {
-  res.render(path.join(__dirname, "/views/pages/index"),
+  res.render("pages/index",
   {
     headTitle: "home",
     homepageContent: homepageDescription,
 
-  }
+  });
 
-)
+
 })
 
 app.use("/technical", technicalRouter)
