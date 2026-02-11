@@ -51,7 +51,7 @@ const gadgetDetails = [
       "LED light therapy mask with multiple wavelengths (colors) to target acne, aging, and dullness. LED therapy is scientifically shown to stimulate collagen and improve skin health.",
     image: "/images/ledmask.png",
     links: "lyko.se",
-    price: "2730kr",
+    price: "2830kr",
     feature: [
       "5 light modes for different skin goals",
       "Hands free LED treatment",
@@ -68,7 +68,7 @@ const gadgetDetails = [
       "LED light therapy mask with multiple wavelengths (colors) to target acne, aging, and dullness. LED therapy is scientifically shown to stimulate collagen and improve skin health.",
     image: "/images/ai-hair-dryer.png",
     links: "lyko.se",
-    price: "4500kr",
+    price: "5500kr",
     feature: [
       "Auto temperature & airflow adjustment",
       "Multiple drying & styling modes",
