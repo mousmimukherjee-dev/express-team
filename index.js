@@ -1,5 +1,8 @@
 import express from 'express';
 import gadgetDetails from './data/gadget_details.js';
+import aboutRouter from './routes/about.js';
+import { homepageDescription } from './data/team_member_details.js';
+import teamMembers from './data/team_member_details.js';
 import technicalRouter from './routes/technical.js';
 import vehicleRouter from './routes/vehicle.js';
 import beautyRouter from './routes/beauty.js';
