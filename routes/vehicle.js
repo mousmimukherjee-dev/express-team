@@ -11,7 +11,7 @@ vehicleRouter.get('/', (req, res) => {
   });
 
   res.render(path.join(__dirname, '/views/pages/category'), {
-    headTitle: 'vehicle',
+    headTitle: 'Vehicle',
     items: filteredItems,
     category: 'Vehicle',
   });

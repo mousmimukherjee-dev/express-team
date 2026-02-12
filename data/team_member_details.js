@@ -41,9 +41,3 @@ export const teamDescription = {
   header: 'Meet the Curators Behind the Lords Of The Strings',
   content: 'We’re a team of four gadget enthusiasts with one shared obsession: finding products that blend innovation, style, and real-world value. From next-gen tech to smart vehicle upgrades and beauty tools that actually work, we research, test, and debate every pick. Our goal is simple—cut through the noise and bring you only the best, so you can shop smarter and cooler. No strings attached.'
 }
-
-export const homepageDescription = {
-  header: 'Welcome to Your Shortcut to the Coolest Gadgets of Today',
-  subtitle: 'Discover cutting-edge technology that transforms your daily life',
-  content: 'We curate the most modern, innovative, and genuinely useful gadgets across tech, vehicles, and beauty—so you don’t have to dig through endless options. Every product you see here is handpicked for design, performance, and that wow factor. If it’s on our list, it’s because we’d use it ourselves.'
-}
