@@ -99,7 +99,4 @@ beautyRouter.get("/gadgets/:gadgetSlug",(req,res)=>{
   
 // })
 
-
-
-
 export default beautyRouter;
