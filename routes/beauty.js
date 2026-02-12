@@ -6,8 +6,14 @@ const beautyRouter = express.Router();
 const __dirname = path.resolve();
 
 beautyRouter.get('/', (req, res) => {
-  res.render('pages/beauty', {
-    headTitle: 'Beauty',
+  const allItems = req.app.locals.gadgetDetails;
+  const filteredItems = allItems.filter((item) => {
+    return item.category === 'beauty';
+  });
+  res.render(path.join(__dirname, '/views/pages/category'), {
+    headTitle: 'beauty',
+    items: filteredItems,
+    category: 'Beauty',
   });
 });
 
@@ -26,60 +32,70 @@ beautyRouter.get("/gadgets",(req,res)=>{
   {
     headTitle:"Beauty Gadgets",
   });
-});
+})
 
-beautyRouter.get('/gadgets/:gadgetSlug', (req, res) => {
-  let { gadgetSlug } = req.params;
 
-  const gadget = gadgetDetails.find((g) => g.slug === gadgetSlug);
+beautyRouter.get("/gadgets/:gadgetSlug",(req,res)=>{
 
-  if (!gadget) {
-    return res.status(404).send('Gadget Not Found');
+  let{gadgetSlug}=req.params;
+
+  const gadget = gadgetDetails.find(g=> g.slug === gadgetSlug);
+
+  if(!gadget){
+
+    return res.status(404).send("Gadget Not Found")
   }
 
-  res.render('pages/gadgets', {
-    headTitle: gadget.title,
-    description: gadget.description,
+  res.render("pages/gadgets",{
+
+    headTitle:gadget.title,
+    description:gadget.description,
   });
+  
 });
 
 // beautyRouter.get("/gadgets/style-pro-led-mask",(req,res)=>{
 
-//   res.render("pages/gadgets",
+//   res.render("pages/gadgets", 
 //   {
 
 //     headTitle:"Stylpro Wavelength Pro LED Mask",
 //   });
 
+  
 // })
 
 // beautyRouter.get("/gadgets/ai-smart-hair-dryer",(req,res)=>{
 
-//   res.render("pages/gadgets",
+//   res.render("pages/gadgets", 
 //   {
 
 //     headTitle:"AI Smart Hair Dryer",
 //   });
 
+  
 // })
 
 // beautyRouter.get("/gadgets/microcurrent-face-lifting-device",(req,res)=>{
 
-//   res.render("pages/gadgets",
+//   res.render("pages/gadgets", 
 //   {
 
 //     headTitle:"Microcurrent Face-Lifting Device",
 //   });
 
+  
 // })
 
 // beautyRouter.get("/gadgets/foreo-bear",(req,res)=>{
 
-//   res.render("pages/gadgets",
+//   res.render("pages/gadgets", 
 //   {
 
 //     headTitle:"FOREO BEARAdvanced Microcurrent",
 //   });
 
+  
 // })
+
 export default beautyRouter;
