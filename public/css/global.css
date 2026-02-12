@@ -30,11 +30,6 @@ header {
   align-items: center;
 }
 
-/* .logo img {
-  height: 60px;
-  object-fit: contain;
-} */
-
 .logo {
   display: flex;
   justify-content: center;
