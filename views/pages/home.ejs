@@ -1,18 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
 <%- include("../partials/head") %>
 <body>
   <%- include("../partials/header") %> 
   <main class="homepage_body">
     <div class="sidebar">
-        <h2 class="sidebar_title">Sidebar-Home Page</h2>
         <%- include("../partials/sideBar") %>
       </div>
-    <div class="sidebar">
-      <h2 class="sidebar_title">Sidebar</h2>
-      <%- include("../partials/sideBar") %>
-    </div>
     <div class="hero_section">
       <div class="hero_content">
-        <h1><%= homepageContent.header %></h3>
+        <h1><%= homepageContent.header %></h1>
         <p><%= homepageContent.subtitle %></p>
       </div>
     </div>

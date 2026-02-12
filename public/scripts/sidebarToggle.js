@@ -1,4 +1,4 @@
-const categoryList = document.querySelector('.sidebar_catogery');
+const categoryList = document.querySelector('.sidebar_category');
 const sideBarToggle = document.querySelector('.sidebar_toggle');
 
 if (sideBarToggle && categoryList) {
