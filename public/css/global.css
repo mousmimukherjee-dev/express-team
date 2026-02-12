@@ -16,25 +16,48 @@ body {
 }
 
 header {
-  padding: 2rem;
+  padding: 1.8rem;
   background: linear-gradient(
-    90deg,
-    hsla(339, 100%, 55%, 1) 0%,
-    hsla(197, 100%, 64%, 1) 100%
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
   );
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo img {
+/* .logo img {
   height: 60px;
   object-fit: contain;
+} */
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}
+
+.logo i {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcaf45);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo h1 {
+  background: linear-gradient(90deg, #833ab4, #fd1d1d, #a445fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 nav a {
   padding: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: aliceblue;
 }
@@ -52,12 +75,14 @@ nav a:hover {
 main {
   flex: 1;
   display: flex;
-  background-color: #FAF4FC;
+  background-color: #faf4fc;
 }
 
 .hero_section {
   height: 500px;
-  background-image: linear-gradient(rgba(241, 18, 219, 0.5), rgba(193, 8, 8, 0.5)), url('/images/hero.webp');
+  background-image:
+    linear-gradient(rgba(241, 18, 219, 0.5), rgba(193, 8, 8, 0.5)),
+    url("/images/hero.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,7 +96,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #FCDBEE;
+  color: #fcdbee;
   font-family: Arial, Helvetica, sans-serif;
   gap: 30px;
 }
@@ -83,7 +108,7 @@ main {
 
 .homepage_text_wrapper {
   flex: 80%;
-  background-color: #FEFDFE;
+  background-color: #fefdfe;
   padding: 3rem;
   border-radius: 15px;
   box-shadow: 1px 1px 5px 1px #c0bebe;
@@ -91,7 +116,7 @@ main {
 
 .homepage_header {
   padding-bottom: 30px;
-  color: #9C19F3;
+  color: #9c19f3;
 }
 
 .homepage_content {
@@ -112,7 +137,7 @@ main {
 
 .feature_header {
   padding-bottom: 20px;
-  color: #7E2A0C;
+  color: #7e2a0c;
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 1.5rem;
@@ -128,15 +153,15 @@ main {
 }
 
 .features:nth-child(1) {
-  background-color: #F8E7FA;
+  background-color: #f8e7fa;
 }
 
 .features:nth-child(2) {
-  background-color: #FEEAE6;
+  background-color: #feeae6;
 }
 
 .features:nth-child(3) {
-  background-color: #FFF3CD;
+  background-color: #fff3cd;
 }
 
 .feature_logo {
@@ -146,7 +171,7 @@ main {
 .sidebar {
   flex: 20%;
   /* width: 280px; */
-  background-color: #FEFDFF;
+  background-color: #fefdff;
   padding: 1.5rem;
   max-height: 700px;
   border-radius: 15px;
@@ -205,6 +230,20 @@ main {
   flex: 80%;
 }
 
+.close-button {
+  text-align: end;
+  font-size: 1rem;
+}
+
+.close-icon {
+  padding: 10px;
+  color: aliceblue;
+}
+
+.close-button {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .nav_menu {
     display: flex;
@@ -214,14 +253,30 @@ main {
     right: 0;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    width: 30%;
+    width: 35%;
     height: 100vh;
-    background: linear-gradient(
-      90deg,
-      hsla(339, 100%, 55%, 1) 0%,
-      hsla(197, 100%, 64%, 1) 100%
-    );
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
     padding: 1rem;
+  }
+
+  nav a {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 900;
+    text-decoration: none;
+    background: linear-gradient(90deg, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  nav a:hover {
+    color: black;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+  }
+
+  .close-button {
+    display: block;
   }
 
   .hamburger {
@@ -233,7 +288,21 @@ main {
   .show {
     transform: translateX(0);
   }
-    main {
+
+  .logo i {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcaf45);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcaf45);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  main {
     display: block;
     padding: 0;
   }
@@ -266,11 +335,11 @@ main {
   .category_link {
     min-width: 150px;
     margin: 0.5rem 1rem 1rem 0.5rem;
-  justify-content: space-between;
-}
+    justify-content: space-between;
+  }
 
   .hero_section {
-  max-height: 300px;
+    max-height: 300px;
   }
 
   .hero_content {
@@ -284,7 +353,8 @@ main {
     flex-direction: column;
   }
 
-  .homepage_content, .homepage_features {
+  .homepage_content,
+  .homepage_features {
     display: flex;
     flex-direction: column;
     padding: 0;
