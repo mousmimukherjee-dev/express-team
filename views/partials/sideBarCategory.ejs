@@ -1,20 +1,18 @@
 <% 
-  const formatTitle = (title)=>{
-    
-    return title.toLowerCase().replace(/[^a-z0-9\s-]/g, '-').replace(/\s+/g, '-').trim();
-  }
-  
-  let sidebarItems = gadgetDetails;
+  const formatTitle = (title) =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '-')
+    .replace(/\s+/g, '-')
+    .trim();
+let sidebarItems = gadgetDetails || [];
 
-  if (category.toLowerCase() === 'vehicle') {
-    sidebarItems = gadgetDetails.filter(el => el.category === 'vehicle');
-  } 
-  else if (category.toLowerCase() === 'technical') {
-    sidebarItems = gadgetDetails.filter(el => el.category === 'technical');
-  } 
-  else if (category.toLowerCase() === 'beauty') {
-    sidebarItems = gadgetDetails.filter(el => el.category === 'beauty');
-  }
+
+if (category) {
+  sidebarItems = gadgetDetails.filter(el =>
+    el.category.toLowerCase() === category.toLowerCase()
+  );
+}
 %>
 
 <div class="sidebar_toggle">
@@ -25,8 +23,9 @@
 </div>
 <div class="sidebar_gadget">
   <% sidebarItems.forEach(el => { %>
-        <a href="<% category %> /<%= formatTitle(el.title) %>" class="gadget_link"><%= el.title.charAt(0).toUpperCase() + el.title.slice(1) %>
-        </a>
-      <p><% el %></p>
+    <a class="gadget_link"
+       href="/<%= category %>/<%= formatTitle(el.title) %>">
+       <%= el.title.charAt(0).toUpperCase() + el.title.slice(1) %>
+    </a>
   <% }) %>
 </div>

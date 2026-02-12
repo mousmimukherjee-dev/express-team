@@ -29,17 +29,19 @@ vehicleRouter.get('/:urlItem', (req, res) => {
   const urlTitle = req.params.urlItem;
   const allItems = req.app.locals.gadgetDetails;
 
-  const item = req.app.locals.gadgetDetails.find(
-    (el) => formatTitle(el.title) === urlTitle,
+  const item = allItems.find(
+    (el) =>
+      el.category.toLowerCase() === 'vehicle' &&
+      formatTitle(el.title) === urlTitle,
   );
 
   if (!item) return res.status(404).send('Item not found');
 
   res.render(path.join(__dirname, '/views/pages/ItemCategory'), {
     headTitle: item.title,
-    item,
     category: 'vehicle',
     gadgetDetails: allItems,
+    item,
   });
 });
 

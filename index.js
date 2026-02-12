@@ -30,7 +30,7 @@ app.use('/vehicle', vehicleRouter);
 app.use('/beauty', beautyRouter);
 app.use('/about', aboutRouter);
 
-app.get('/:urlItem', (req, res) => {
+app.get('/:urlItem1', (req, res) => {
   const formatTitle = (title) =>
     title
       .toLowerCase()
@@ -38,7 +38,7 @@ app.get('/:urlItem', (req, res) => {
       .replace(/\s+/g, '-')
       .trim();
 
-  const urlTitle = req.params.urlItem;
+  const urlTitle = req.params.urlItem1;
 
   const item = req.app.locals.gadgetDetails.find(
     (el) => formatTitle(el.title) === urlTitle,
