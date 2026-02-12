@@ -20,7 +20,7 @@ app.locals.gadgetDetails = gadgetDetails;
 
 app.get('/', (req, res) => {
   res.render(path.join(__dirname, '/views/pages/home'), {
-    headTitle: 'home',
+    headTitle: 'Home page',
     homepageContent: homepageDescription,
   });
 });
@@ -38,10 +38,10 @@ app.get('/:urlItem1', (req, res) => {
       .replace(/\s+/g, '-')
       .trim();
 
-  const urlTitle = req.params.urlItem1;
+  const urlTitle1 = req.params.urlItem1;
 
   const item = req.app.locals.gadgetDetails.find(
-    (el) => formatTitle(el.title) === urlTitle,
+    (el) => formatTitle(el.title) === urlTitle1,
   );
 
   if (!item) return res.status(404).send('Item not found');
@@ -49,6 +49,8 @@ app.get('/:urlItem1', (req, res) => {
   res.render(path.join(__dirname, '/views/pages/itemHome'), {
     headTitle: item.title,
     item,
+    category: item.category,
+    gadgetDetails: req.app.locals.gadgetDetails,
   });
 });
 

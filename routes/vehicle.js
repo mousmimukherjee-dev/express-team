@@ -1,5 +1,6 @@
 import express from 'express';
 import * as path from 'path';
+import categoryPageDescription from '../data/category_descriptions.js';
 
 const vehicleRouter = express.Router();
 const __dirname = path.resolve();
@@ -11,11 +12,16 @@ vehicleRouter.get('/', (req, res) => {
     (item) => item.category.toLowerCase() === 'vehicle',
   );
 
+  const categoryHeroPage = categoryPageDescription.find(
+    (el) => el.category === 'vehicle',
+  );
+
   res.render(path.join(__dirname, '/views/pages/category'), {
     headTitle: 'Vehicle',
     items: filteredItems,
     category: 'vehicle',
     gadgetDetails: allItems,
+    categoryHeroPage,
   });
 });
 
@@ -37,7 +43,7 @@ vehicleRouter.get('/:urlItem', (req, res) => {
 
   if (!item) return res.status(404).send('Item not found');
 
-  res.render(path.join(__dirname, '/views/pages/ItemCategory'), {
+  res.render(path.join(__dirname, '/views/pages/itemCategory'), {
     headTitle: item.title,
     category: 'vehicle',
     gadgetDetails: allItems,

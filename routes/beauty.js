@@ -1,6 +1,6 @@
 import express from 'express';
 import * as path from 'path';
-// import gadgetDetails from '../data/gadget_details.js';
+import categoryPageDescription from '../data/category_descriptions.js';
 
 const beautyRouter = express.Router();
 const __dirname = path.resolve();
@@ -10,88 +10,43 @@ beautyRouter.get('/', (req, res) => {
   const filteredItems = allItems.filter((item) => {
     return item.category === 'beauty';
   });
+  const categoryHeroPage = categoryPageDescription.find(
+    (el) => el.category === 'vehicle',
+  );
+
   res.render(path.join(__dirname, '/views/pages/category'), {
     headTitle: 'Beauty',
     items: filteredItems,
-    category: 'Beauty',
+    category: 'beauty',
+    gadgetDetails: allItems,
+    categoryHeroPage,
   });
 });
 
-// beautyRouter.get("/", (req, res) => {
-//     res.render("pages/beauty",
-//     {
-//       headTitle: "Beauty",
+beautyRouter.get('/:urlItem', (req, res) => {
+  const formatTitle = (title) =>
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '-')
+      .replace(/\s+/g, '-')
+      .trim();
+  const urlTitle = req.params.urlItem;
+  const allItems = req.app.locals.gadgetDetails;
 
-//     });
+  const item = allItems.find(
+    (el) =>
+      el.category.toLowerCase() === 'beauty' &&
+      formatTitle(el.title) === urlTitle,
+  );
 
-// })
+  if (!item) return res.status(404).send('Item not found');
 
-// beautyRouter.get("/gadgets",(req,res)=>{
-
-//   res.render("pages/gadgets",
-//   {
-
-//     headTitle:"Beauty Gadgets",
-//   });
-// })
-
-// beautyRouter.get("/gadgets/:gadgetSlug",(req,res)=>{
-
-//   let{gadgetSlug}=req.params;
-
-//   const gadget = gadgetDetails.find(g=> g.slug === gadgetSlug);
-
-//   if(!gadget){
-
-//     return res.status(404).send("Gadget Not Found")
-//   }
-
-//   res.render("pages/gadgets",{
-
-//     headTitle:gadget.title,
-//     description:gadget.description,
-//   });
-
-// });
-
-// beautyRouter.get("/gadgets/style-pro-led-mask",(req,res)=>{
-
-//   res.render("pages/gadgets",
-//   {
-
-//     headTitle:"Stylpro Wavelength Pro LED Mask",
-//   });
-
-// })
-
-// beautyRouter.get("/gadgets/ai-smart-hair-dryer",(req,res)=>{
-
-//   res.render("pages/gadgets",
-//   {
-
-//     headTitle:"AI Smart Hair Dryer",
-//   });
-
-// })
-
-// beautyRouter.get("/gadgets/microcurrent-face-lifting-device",(req,res)=>{
-
-//   res.render("pages/gadgets",
-//   {
-
-//     headTitle:"Microcurrent Face-Lifting Device",
-//   });
-
-// })
-
-// beautyRouter.get("/gadgets/foreo-bear",(req,res)=>{
-
-//   res.render("pages/gadgets",
-//   {
-
-//     headTitle:"FOREO BEARAdvanced Microcurrent",
-//   });
-
-// })
+  res.render(path.join(__dirname, '/views/pages/itemCategory'), {
+    headTitle: item.title,
+    category: 'beauty',
+    gadgetDetails: allItems,
+    item,
+  });
+});
 
 export default beautyRouter;

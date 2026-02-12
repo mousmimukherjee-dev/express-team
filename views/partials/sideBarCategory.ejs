@@ -1,18 +1,18 @@
 <% 
   const formatTitle = (title) =>
-  title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '-')
-    .replace(/\s+/g, '-')
-    .trim();
-let sidebarItems = gadgetDetails || [];
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '-')
+      .replace(/\s+/g, '-')
+      .trim();
 
+  let sidebarItems = gadgetDetails;
 
-if (category) {
-  sidebarItems = gadgetDetails.filter(el =>
-    el.category.toLowerCase() === category.toLowerCase()
-  );
-}
+  if (category) {
+    sidebarItems = gadgetDetails.filter(el => 
+      el.category.toLowerCase() === category.toLowerCase()
+    );
+  }
 %>
 
 <div class="sidebar_toggle">
