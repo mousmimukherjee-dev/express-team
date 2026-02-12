@@ -1,10 +1,12 @@
 <%
   const categories = [];
 
-  for (let i = 0; i < gadgetDetails.length; i++) {
-    if (categories.indexOf(gadgetDetails[i].category) === -1) {
-      categories.push(gadgetDetails[i].category);
-    }
+   if (sidebarItems && sidebarItems.length > 0) {
+    sidebarItems.forEach(g => {
+      if (!categories.includes(g.category)) {
+        categories.push(g.category);
+      }
+    });
   }
 %>
 <div class="sidebar_toggle">
@@ -14,9 +16,15 @@
   </span>
 </div>
 <ul class="sidebar_category">
-  <% categories.forEach(el => { %>
-      <li class="category_link">
-        <a href="/<%= el.toLowerCase() %>"><%= el.slice(0,1).toUpperCase() + el.slice(1) %></a>
-      </li>
+  <% sidebarItems.forEach(item => { %>
+    <li class="category_link">
+      <button 
+        class="sidebar_btn" 
+        data-category="<%= item.category %>" 
+        data-slug="<%= item.slug ? item.slug : '' %>"
+      >
+        <%= item.title %>
+      </button>
+    </li>
   <% }) %>
 </ul>

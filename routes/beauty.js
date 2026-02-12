@@ -5,35 +5,24 @@ import gadgetDetails from "../data/gadget_details.js";
 const beautyRouter = express.Router();
 const __dirname = path.resolve();
 
-beautyRouter.get('/', (req, res) => {
-  const allItems = req.app.locals.gadgetDetails;
-  const filteredItems = allItems.filter((item) => {
-    return item.category === 'beauty';
-  });
-  res.render(path.join(__dirname, '/views/pages/category'), {
-    headTitle: 'beauty',
-    items: filteredItems,
-    category: 'Beauty',
-  });
-});
+const beautyItems = gadgetDetails.filter(
+    item => item.category === "beauty"
+  );
 
 beautyRouter.get("/", (req, res) => {
-    res.render("pages/beauty",
-    {
-      headTitle: "Beauty",
-      
-    });
+
   
-})
 
-beautyRouter.get("/gadgets",(req,res)=>{
-
-  res.render("pages/gadgets", 
-  {
-
-    headTitle:"Beauty Gadgets",
+  res.render("pages/gadgets", {
+    
+    items: beautyItems,
+    sidebarItems: beautyItems,
+    description: "Welcome to beauty page",
+    category:"Beauty",
+    headTitle:"Beauty"
   });
-})
+  
+});
 
 
 beautyRouter.get("/gadgets/:gadgetSlug",(req,res)=>{
@@ -51,52 +40,10 @@ beautyRouter.get("/gadgets/:gadgetSlug",(req,res)=>{
 
     headTitle:gadget.title,
     description:gadget.description,
+    sidebarItems: beautyItems
   });
   
 });
 
-// beautyRouter.get("/gadgets/style-pro-led-mask",(req,res)=>{
-
-//   res.render("pages/gadgets", 
-//   {
-
-//     headTitle:"Stylpro Wavelength Pro LED Mask",
-//   });
-
-  
-// })
-
-// beautyRouter.get("/gadgets/ai-smart-hair-dryer",(req,res)=>{
-
-//   res.render("pages/gadgets", 
-//   {
-
-//     headTitle:"AI Smart Hair Dryer",
-//   });
-
-  
-// })
-
-// beautyRouter.get("/gadgets/microcurrent-face-lifting-device",(req,res)=>{
-
-//   res.render("pages/gadgets", 
-//   {
-
-//     headTitle:"Microcurrent Face-Lifting Device",
-//   });
-
-  
-// })
-
-// beautyRouter.get("/gadgets/foreo-bear",(req,res)=>{
-
-//   res.render("pages/gadgets", 
-//   {
-
-//     headTitle:"FOREO BEARAdvanced Microcurrent",
-//   });
-
-  
-// })
 
 export default beautyRouter;

@@ -125,6 +125,8 @@ main {
   background-color: aquamarine;
 }
 
+
+
 @media screen and (max-width: 768px) {
   .nav_menu {
     display: flex;

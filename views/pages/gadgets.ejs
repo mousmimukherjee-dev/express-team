@@ -2,9 +2,26 @@
 <html lang="en">
 <%- include("../partials/head") %>
 <body>
-  <%- include("../partials/header") %>
-  <main>
-    <%= description %>
+  <%- include("../partials/header") %> 
+  <main class="homepage_body">
+    <div class="sidebar">
+
+      <ul id="sidebar_items">
+        
+        <%- include("../partials/sideBar") %>
+        
+
+      </ul>
+        
+    </div>
+    <div class="hero_section">
+      <div class="hero_content">
+        <h1><%= description %></h1>
+        <div id="gadget_image"></div>
+        
+        
+      </div>
+    </div>
   </main>
   <%- include("../partials/footer") %>
 </body>

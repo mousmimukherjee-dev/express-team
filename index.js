@@ -19,9 +19,10 @@ app.use(express.static('public'));
 app.locals.gadgetDetails = gadgetDetails;
 
 app.get('/', (req, res) => {
-  res.render(path.join(__dirname, '/views/pages/home'), {
-    headTitle: 'home',
-    homepageContent: homepageDescription,
+  res.render('pages/home', {
+    headTitle: 'Home',
+    sidebarItems: gadgetDetails,
+    homepageContent: homepageDescription
   });
 });
 
