@@ -3,14 +3,38 @@
 <%- include("../partials/head") %>
 <body>
   <%- include("../partials/header") %> 
-  <main class="homepage_body">
-    <div class="sidebar">
-        <%- include("../partials/sideBar") %>
+  <main>
+    <div class="homepage_body">
+      <div class="hero_section">
+        <div class="hero_content">
+          <h1><%= homepageContent.hero_title %></h1>
+          <p><%= homepageContent.hero_subtitle %></p>
+        </div>
       </div>
-    <div class="hero_section">
-      <div class="hero_content">
-        <h1><%= homepageContent.header %></h1>
-        <p><%= homepageContent.subtitle %></p>
+      <div class="homepage_content">
+        <div class="sidebar">
+          <%- include("../partials/sideBar") %>
+        </div>
+        <div class="homepage_text_wrapper">
+          <div>
+            <h2 class="homepage_header">
+              <%= homepageContent.header %></h2>
+            <p class="homepage_description">
+              <%= homepageContent.content %>
+            </p>
+          </div>
+            <div class="homepage_features">
+            <% homepageContent.features.forEach(feature => { %>
+              <div class="features">
+                <div class="feature_logo">
+                  <img src="<%= feature.logo %>" alt="feature logo" height="30px" width="auto">
+                </div>
+                <h3 class="feature_header"><%= feature.feature %></h3>
+                <p class="feature_description"><%= feature.description %></p>
+              </div>
+            <% }) %>
+          </div> 
+        </div>
       </div>
     </div>
   </main>

@@ -1,6 +1,6 @@
 const gadgetDetails = [
   {
-    category: "technical",
+    category: "tech",
     title: "Smart Watch Pro",
     subtitle: "Wearable Technology",
     description: "Track fitness, notifications, and health metrics.",
@@ -42,7 +42,6 @@ const gadgetDetails = [
       "LED indicators for power & mode",
     ],
   },
-
   {
     category: "beauty",
     title: "Stylpro Wavelength Pro LED Mask",
@@ -76,7 +75,6 @@ const gadgetDetails = [
       "Cordless, portable design",
     ],
   },
-
   {
     category: "beauty",
     title: "Microcurrent Face-Lifting Device",
