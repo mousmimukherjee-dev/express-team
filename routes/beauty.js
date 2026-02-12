@@ -1,6 +1,6 @@
-import express from 'express';
-import * as path from 'path';
-import gadgetDetails from '../data/gadget_details.js';
+import express from "express"
+import * as path from "path";
+import gadgetDetails from "../data/gadget_details.js";
 
 const beautyRouter = express.Router();
 const __dirname = path.resolve();
@@ -11,9 +11,21 @@ beautyRouter.get('/', (req, res) => {
   });
 });
 
-beautyRouter.get('/gadgets', (req, res) => {
-  res.render('pages/gadgets', {
-    headTitle: 'Beauty Gadgets',
+beautyRouter.get("/", (req, res) => {
+    res.render("pages/beauty",
+    {
+      headTitle: "Beauty",
+      
+    });
+  
+})
+
+beautyRouter.get("/gadgets",(req,res)=>{
+
+  res.render("pages/gadgets", 
+  {
+
+    headTitle:"Beauty Gadgets",
   });
 });
 
@@ -71,5 +83,4 @@ beautyRouter.get('/gadgets/:gadgetSlug', (req, res) => {
 //   });
 
 // })
-
 export default beautyRouter;
