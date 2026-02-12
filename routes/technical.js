@@ -7,12 +7,12 @@ const __dirname = path.resolve();
 technicalRouter.get('/', (req, res) => {
   const allItems = req.app.locals.gadgetDetails;
   const filteredItems = allItems.filter((item) => {
-    return item.category === 'technical';
+    return item.category === 'tech';
   });
   res.render(path.join(__dirname, '/views/pages/category'), {
-    headTitle: 'technical',
+    headTitle: 'Tech',
     items: filteredItems,
-    category: 'technical',
+    category: 'tech',
   });
 });
 

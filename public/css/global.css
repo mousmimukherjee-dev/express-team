@@ -51,7 +51,7 @@ nav a:hover {
 main {
   flex: 1;
   display: flex;
-  padding: 2rem;
+  background-color: #FAF4FC;
 }
 
 .hero_section {
@@ -75,11 +75,81 @@ main {
   gap: 30px;
 }
 
+.homepage_body {
+  width: 100%;
+  color: #364153;
+}
+
+.homepage_text_wrapper {
+  flex: 80%;
+  background-color: #FEFDFE;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px 1px #c0bebe;
+}
+
+.homepage_header {
+  padding-bottom: 30px;
+  color: #9C19F3;
+}
+
+.homepage_content {
+  display: flex;
+  padding: 3rem;
+  gap: 30px;
+}
+
+.homepage_description {
+  line-height: 2.5rem;
+}
+
+.homepage_features {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.feature_header {
+  padding-bottom: 20px;
+  color: #7E2A0C;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-wrap: nowrap;
+}
+
+.features {
+  border-radius: 15px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.features:nth-child(1) {
+  background-color: #F8E7FA;
+}
+
+.features:nth-child(2) {
+  background-color: #FEEAE6;
+}
+
+.features:nth-child(3) {
+  background-color: #FFF3CD;
+}
+
+.feature_logo {
+  padding-bottom: 10px;
+}
+
 .sidebar {
-  width: 280px;
-  background-color: #f4f4f4;
+  flex: 20%;
+  /* width: 280px; */
+  background-color: #FEFDFF;
   padding: 1.5rem;
   max-height: 700px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 5px 1px #c0bebe;
 }
 
 .sidebar_toggle {
@@ -121,6 +191,16 @@ main {
 .category_link:hover {
   color: black;
   background-color: aquamarine;
+}
+
+.main_category {
+  display: flex;
+  padding: 3rem;
+  gap: 30px;
+}
+
+.content {
+  flex: 80%;
 }
 
 @media screen and (max-width: 768px) {
@@ -187,9 +267,40 @@ main {
   justify-content: space-between;
 }
 
-.homepage_body {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
+  .hero_section {
+  max-height: 300px;
+  }
+
+  .hero_content {
+    text-align: center;
+    padding: 30px;
+  }
+
+  .homepage_body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .homepage_content, .homepage_features {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
 }
+
+@media screen and (max-width: 1024px) {
+  .homepage_content {
+    padding: 0;
+    gap: 0;
+  }
+
+  .homepage_text_wrapper {
+    padding: 30px;
+  }
+
+  .homepage_features {
+    display: flex;
+    flex-direction: column;
+  }
 }

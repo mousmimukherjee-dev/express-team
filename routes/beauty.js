@@ -24,7 +24,6 @@ beautyRouter.get("/gadgets",(req,res)=>{
 
   res.render("pages/gadgets", 
   {
-
     headTitle:"Beauty Gadgets",
   });
 });
