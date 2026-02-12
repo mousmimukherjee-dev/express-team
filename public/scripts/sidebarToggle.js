@@ -1,4 +1,4 @@
-const categoryList = document.querySelector('.sidebar_category');
+const categoryList = document.querySelector('.sidebar_gadget');
 const sideBarToggle = document.querySelector('.sidebar_toggle');
 
 if (sideBarToggle && categoryList) {
@@ -10,7 +10,7 @@ if (sideBarToggle && categoryList) {
 
 categoryList.addEventListener('click', (e) => {
   console.log(e.target.tagName);
-  if (e.target.tagName === 'A' || e.target.tagName === 'LI') {
+  if (e.target.tagName === 'A' || e.target.tagName === 'DIV') {
     categoryList.classList.remove('active');
   }
 });

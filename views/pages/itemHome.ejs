@@ -7,8 +7,17 @@
       <div class="sidebar"><%- include("../partials/sideBarHome") %></div>
       <div class="hero_section">
         <div class="hero_content">
-          <h1><%= homepageContent.header %></h1>
-          <p><%= homepageContent.subtitle %></p>
+          <div class="item_wrapper">
+            <h2 class="item_name"><%= item.title %></h2>
+            <p class="item_description"><%= item.description %></p>
+            <img
+              src="<%= item.image %>"
+              alt="image"
+              height="400px"
+              width="auto"
+            />
+            <p class="item_description"><%= item.price %></p>
+          </div>
         </div>
       </div>
     </main>

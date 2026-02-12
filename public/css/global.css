@@ -1,3 +1,7 @@
+:root {
+  --text-color: #010b15;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +61,9 @@ main {
 
 .hero_section {
   height: 500px;
-  background-image: linear-gradient(rgba(241, 18, 219, 0.5), rgba(193, 8, 8, 0.5)), url('/images/hero.webp');
+  background-image:
+    linear-gradient(rgba(241, 18, 219, 0.5), rgba(193, 8, 8, 0.5)),
+    url('/images/hero.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,16 +77,18 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #FCDBEE;
+  color: #fcdbee;
   font-family: Arial, Helvetica, sans-serif;
   gap: 30px;
 }
 
 .sidebar {
-  width: 280px;
   background-color: #f4f4f4;
-  padding: 1.5rem;
+  padding: 1rem;
   max-height: 700px;
+  margin-right: 1rem;
+  width: 280px;
+  border-radius: 15px;
 }
 
 .sidebar_toggle {
@@ -99,28 +107,32 @@ main {
   transform: rotate(180deg);
 }
 
-.sidebar_category {
+.sidebar_gadget {
   list-style-type: none;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-.category_link {
-  padding: 10px 30px;
-  color: white;
-  background: linear-gradient(
-    90deg,
-    hsla(339, 100%, 55%, 1) 0%,
-    hsla(197, 100%, 64%, 1) 100%
-  );
-  margin: 1rem;
-}
-
-.category_link a {
+.gadget_link {
+  padding: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+  background-color: #d5dadf;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  display: block;
   text-decoration: none;
+  color: inherit;
+  /* margin: 1rem; */
 }
 
-.category_link:hover {
+/* .gadget_link a {
+  text-decoration: none;
+  color: var(--text-color);
+} */
+
+.gadget_link:hover {
   color: black;
   background-color: aquamarine;
 }
@@ -153,7 +165,7 @@ main {
   .show {
     transform: translateX(0);
   }
-    main {
+  main {
     display: block;
     padding: 0;
   }
@@ -163,6 +175,7 @@ main {
   }
 
   .sidebar {
+    margin-right: 0;
     width: 100%;
     text-align: center;
   }
@@ -173,25 +186,24 @@ main {
     margin-bottom: 1rem;
   }
 
-  .sidebar_category {
+  .sidebar_gadget {
     display: none;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
   }
 
-  .sidebar_category.active {
+  .sidebar_gadget.active {
     display: flex;
   }
 
-  .category_link {
+  .gadget_link {
     min-width: 150px;
-    margin: 0.5rem 1rem 1rem 0.5rem;
-  justify-content: space-between;
-}
+    justify-content: space-between;
+  }
 
-.homepage_body {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-}
+  .homepage_body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
 }

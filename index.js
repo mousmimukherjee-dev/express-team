@@ -30,4 +30,26 @@ app.use('/vehicle', vehicleRouter);
 app.use('/beauty', beautyRouter);
 app.use('/about', aboutRouter);
 
+app.get('/:urlItem', (req, res) => {
+  const formatTitle = (title) =>
+    title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '-')
+      .replace(/\s+/g, '-')
+      .trim();
+
+  const urlTitle = req.params.urlItem;
+
+  const item = req.app.locals.gadgetDetails.find(
+    (el) => formatTitle(el.title) === urlTitle,
+  );
+
+  if (!item) return res.status(404).send('Item not found');
+
+  res.render(path.join(__dirname, '/views/pages/itemHome'), {
+    headTitle: item.title,
+    item,
+  });
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));

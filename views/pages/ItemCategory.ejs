@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head") %>
+  <body>
+    <%- include("../partials/header") %>
+    <main class="homepage_body">
+      <div class="sidebar"><%- include("../partials/sideBarCategory") %></div>
+      <div class="hero_section">
+        <div class="hero_content">
+          <div class="item_wrapper">
+            <h2 class="item_name"><%= item.title %></h2>
+            <p class="item_description"><%= item.description %></p>
+            <img
+              src="<%= item.image %>"
+              alt="image"
+              height="400px"
+              width="auto"
+            />
+            <p class="item_description"><%= item.price %></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+  </body>
+</html>

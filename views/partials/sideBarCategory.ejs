@@ -1,0 +1,32 @@
+<% 
+  const formatTitle = (title)=>{
+    
+    return title.toLowerCase().replace(/[^a-z0-9\s-]/g, '-').replace(/\s+/g, '-').trim();
+  }
+  
+  let sidebarItems = gadgetDetails;
+
+  if (category.toLowerCase() === 'vehicle') {
+    sidebarItems = gadgetDetails.filter(el => el.category === 'vehicle');
+  } 
+  else if (category.toLowerCase() === 'technical') {
+    sidebarItems = gadgetDetails.filter(el => el.category === 'technical');
+  } 
+  else if (category.toLowerCase() === 'beauty') {
+    sidebarItems = gadgetDetails.filter(el => el.category === 'beauty');
+  }
+%>
+
+<div class="sidebar_toggle">
+  <span class="sidebar_arrow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/>
+    </svg>
+  </span>
+</div>
+<div class="sidebar_gadget">
+  <% sidebarItems.forEach(el => { %>
+        <a href="<% category %> /<%= formatTitle(el.title) %>" class="gadget_link"><%= el.title.charAt(0).toUpperCase() + el.title.slice(1) %>
+        </a>
+      <p><% el %></p>
+  <% }) %>
+</div>
