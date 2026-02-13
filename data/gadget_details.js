@@ -150,7 +150,7 @@ const gadgetDetails = [
   slug: "urban-bluetooth-smart-helmet",
   description: "The LIVALL BH51M NSO Urban is a smart cycling helmet with integrated JBL sound, smart LED lighting (brake and turn signals), fall detection with SOS alerts, and hands-free Bluetooth connectivity for calls and navigation — designed for safer and more enjoyable urban riding.",
   image: "/images/BH51_NSO22.webp",
-  links: "https://livall.com/products/bh51m-nso-urban?variant=44858649477429",
+  link: "https://livall.com/products/bh51m-nso-urban?variant=44858649477429",
   price: "799kr",
   feature: [
     "Integrated JBL Bluetooth speakers for music and calls",
@@ -165,7 +165,7 @@ const gadgetDetails = [
   slug: "ottocast-mini-slim-wireless-carplay",
   description: "A plug-and-play wireless adapter that lets you use Apple CarPlay and Android Auto in cars that normally need a wired connection — so your phone connects automatically via Bluetooth and Wi-Fi for a cable-free experience.",
   image: "/images/ottocast_1.webp", 
-  links: "https://www.fyndiq.se/product/turn0product0", 
+  link: "https://www.ottocast.com/en-se/products/mini-wireless-carplay-android-auto-adapter", 
   price: "431kr",
   feature: [
     "Enables wireless CarPlay & Android Auto",
@@ -180,7 +180,7 @@ const gadgetDetails = [
   slug: "battery-starter",
   description: "A powerful portable battery jump starter with a 26800 mAh battery and up to 6000 A peak current — ideal for emergency starts on 12 V vehicles (cars, bikes, SUVs).",
   image: "/images/Battery_Starter.jpg",
-  links: "https://www.amazon.se/dp/B0XXXXX",
+  link: "https://www.amazon.se/FNNEMGE-26800mAh-features-powerful-charging/dp/B0B7NRF3DP?th=1",
   price: "799kr",
   feature: [
     "High-capacity jump starter for vehicle batteries",
