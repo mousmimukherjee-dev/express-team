@@ -126,11 +126,9 @@ main {
   color: inherit;
   /* margin: 1rem; */
 }
-
-/* .gadget_link a {
-  text-decoration: none;
-  color: var(--text-color);
-} */
+.gadget_link.clicked {
+  background-color: rgb(199, 244, 229);
+}
 
 .gadget_link:hover {
   color: black;
