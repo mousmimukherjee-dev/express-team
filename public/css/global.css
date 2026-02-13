@@ -100,26 +100,28 @@ main {
   color: #364153;
 }
 
-.homepage_text_wrapper {
+.homepage_text_wrapper, .category_content, .gadget_content {
   flex: 80%;
   background-color: #fefdfe;
   padding: 3rem;
   border-radius: 15px;
+  height: auto;
   box-shadow: 1px 1px 5px 1px #c0bebe;
 }
 
-.homepage_header {
+.homepage_header, .category_header {
   padding-bottom: 30px;
   color: #9c19f3;
 }
 
-.homepage_content {
+.homepage_content, .category_content, .gadget_content {
   display: flex;
+  align-items: flex-start;
   padding: 3rem;
   gap: 30px;
 }
 
-.homepage_description {
+.homepage_description, .category_header {
   line-height: 2.5rem;
 }
 
@@ -163,13 +165,12 @@ main {
 }
 
 .sidebar {
-  flex: 20%;
-  /* width: 280px; */
+  flex: 10%;
   background-color: #fefdff;
   padding: 1.5rem;
-  max-height: 700px;
   border-radius: 15px;
   box-shadow: 1px 1px 5px 1px #c0bebe;
+  height: auto;
 }
 
 .sidebar_toggle {
@@ -194,33 +195,44 @@ main {
 }
 
 .category_link {
+  border-radius: 15px;
+  width: 200px;
   padding: 10px 30px;
   color: white;
-  background: linear-gradient(
-    90deg,
-    hsla(339, 100%, 55%, 1) 0%,
-    hsla(197, 100%, 64%, 1) 100%
-  );
+  background-color: #F9FAFB;
   margin: 1rem;
+  place-self: center;
 }
 
 .category_link a {
   text-decoration: none;
+  color: #1E2939;
+  font-weight: bolder;
 }
+
+.category_link a:hover {
+  text-decoration: none;
+  color: #1E2939;
+  font-weight: bolder;
+  color: snow;
+}
+
 
 .category_link:hover {
-  color: black;
-  background-color: aquamarine;
+  box-shadow: 1px 1px 5px 1px #c0bebe;
+  background-color: rgba(162, 57, 148, 0.7);
+  cursor: pointer;
 }
 
-.main_category {
+.main_category, .main_gadget {
   display: flex;
+  align-items: flex-start;
   padding: 3rem;
   gap: 30px;
 }
 
 .content {
-  flex: 80%;
+  flex: 90%;
 }
 
 .close-button {
@@ -295,6 +307,7 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   main {
     display: block;
     padding: 0;
@@ -305,8 +318,10 @@ main {
   }
 
   .sidebar {
+    background-color: #FCA240;
     width: 100%;
     text-align: center;
+    border-radius: 0;
   }
 
   .sidebar_toggle {
@@ -326,7 +341,6 @@ main {
   }
 
   .category_link {
-    min-width: 150px;
     margin: 0.5rem 1rem 1rem 0.5rem;
     justify-content: space-between;
   }
@@ -346,11 +360,27 @@ main {
     flex-direction: column;
   }
 
-  .homepage_content,
+  .homepage_content, .category_content, .gadget_content,
   .homepage_features {
     display: flex;
     flex-direction: column;
     padding: 0;
+  }
+
+  .homepage_text_wrapper {
+    border-radius: 0;
+  }
+
+  .main_category, .main_gadget {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+
+  .category_content {
+    border-radius: 0;
+
   }
 }
 

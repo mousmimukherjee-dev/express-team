@@ -1,12 +1,3 @@
-<%
-  const categories = [];
-
-  for (let i = 0; i < gadgetDetails.length; i++) {
-    if (categories.indexOf(gadgetDetails[i].category) === -1) {
-      categories.push(gadgetDetails[i].category);
-    }
-  }
-%>
 <div class="sidebar_toggle">
   <span class="sidebar_arrow">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/>
@@ -14,9 +5,19 @@
   </span>
 </div>
 <ul class="sidebar_category">
-  <% categories.forEach(el => { %>
+  <% const sidebarParameter = pageType; %>
+  <% const sidebarList = gadgetList.filter(category => category.category === sidebarParameter);%>
+  <% if (sidebarList.length > 0 && pageType !== 'home') { %>
+    <% sidebarList.forEach(gadget => { %>
       <li class="category_link">
-        <a href="/<%= el.toLowerCase() %>"><%= el.slice(0,1).toUpperCase() + el.slice(1) %></a>
+        <a href="/<%= gadget.category %>/<%= gadget.slug %>"><%= gadget.title %></a>
       </li>
   <% }) %>
+  <% } else {%>
+     <% gadgetList.forEach(gadget => { %>
+     <li class="category_link">
+       <a href="/<%= gadget.category %>/<%= gadget.slug %>"><%= gadget.title %></a>
+     </li>
+    <% }) %>
+  <% } %>
 </ul>

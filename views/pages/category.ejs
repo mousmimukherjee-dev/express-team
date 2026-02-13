@@ -5,44 +5,20 @@
   <%- include("../partials/header") %>
   <main class="main_category">
     <div class="sidebar">
-      <%- include("../partials/sideBar") %>
+       <%- include("../partials/sidebar") %>
     </div>
-    <div class="content">
-      <h1>
-        Category type - <%= category || 'Category is unknown' %>
-      </h1>
-
-      <% if (items && items.length > 0) { %>
-
-        <% for (let i = 0; i < items.length; i++) { %>
-          <div class="item_wrapper">
-
-            <h2 class="item_name">
-              <%= items[i].title || 'No title available' %>
-            </h2>
-
-            <p class="item_description">
-              <%= items[i].subtitle || 'Image sub title' %>
-            </p>
-
-            <% if (items[i].image) { %>
-              <img src="<%= items[i].image %>" 
-                   alt="<%= items[i].title || 'Image title' %>" 
-                   width="300px" />
-            <% } %>
-
-            <p class="item_description">
-              <%= items[i].description || '' %>
-            </p>
-
-            <p class="item_description">
-              <%= items[i].price || '' %>
-            </p>
-          </div>
+    <div class="category_content">
+      <div>
+        <% const parameter = headTitle; %>
+        <% const categoryDescription = categoryContent.find(category => category.name === parameter);%>
+        <% if (categoryDescription) {%>
+            <div class="category_image">
+              <img src="<%= categoryDescription.image %>" alt="<%= categoryDescription.header %>" height="200px" width="auto">
+            </div>
+            <h2 class="category_header"><%= categoryDescription.header %></h2>
+            <p class="category_description"><%= categoryDescription.description %></p>
         <% } %>
-      <% } else { %>
-        <p>No items found for this category.</p>
-      <% } %>
+      </div>
     </div>
   </main>
   <%- include("../partials/footer") %>
