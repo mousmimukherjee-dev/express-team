@@ -9,6 +9,7 @@ const __dirname = path.resolve();
 aboutRouter.get('/', (req, res) => {
   res.render(path.join(__dirname, 'views/pages/about'),
     {
+      pageType: 'about',
       headTitle: 'About Us',
       teamList: teamMembers,
       aboutTeam: teamDescription,
