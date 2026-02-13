@@ -1,15 +1,5 @@
 const gadgetDetails = [
-  {
-    category: "tech",
-    title: "Smart Watch Pro",
-    subtitle: "Wearable Technology",
-    description: "Track fitness, notifications, and health metrics.",
-    image: "/images/sampleImage.jpg",
-    price: "1990kr",
-    tags: ["Tech", "Wearable"],
-    page: '/tech/smart-watch-pro',
-    slug: "smart-watch-pro",
-  },
+ 
   {
     category: "beauty",
     title: "FOREO BEAR-2",
@@ -137,21 +127,69 @@ const gadgetDetails = [
     ],
     page: '/tech/smart-watch-pro',
   },
-    {
+    
+  {
     category: "vehicle",
-    title: "Test",
-    slug: "norwiss-smarta-glasses",
-    description: "These top of the line smart glasses blends reality and tech in a perfect way. Take photos, answer calls or translate other languages in the most comfortable way possible.",
-    image: "/images/glasses.jpg",
-    link: "https://norwiss.com/products/norwiss-smart-glasses",
-    price: "1799kr",
+    title: "Trek CarBack Radar Rear Bike Light",
+    slug: "trek-carback",
+    description: "A smart rear bike radar and tail light that detects approaching vehicles from behind and alerts the rider via compatible cycling computers or apps. Designed to improve road awareness and cycling safety while providing powerful rear visibility.",
+    image: "/images/TK24-carback.gif",
+    link: "https://www.trekbikes.com/se/sv_SE/",
+    price: "$199.99",
     feature: [
-      "HD camera for photos and videos",
-      "AI integration",
-      "noise cancelling dual microphone",
+      "Rear radar detects vehicles approaching from behind",
+      "Integrated bright rear safety light",
+      "Long detection range for early hazard awareness",
     ],
-    page: '/tech/smart-watch-pro',
+    page: '/vehicle/trek-carback',
   },
+
+  {
+  category: "vehicle",
+  title: "Livall BH51M NSO Urban Bluetooth Smart Helmet",
+  slug: "urban-bluetooth-smart-helmet",
+  description: "The LIVALL BH51M NSO Urban is a smart cycling helmet with integrated JBL sound, smart LED lighting (brake and turn signals), fall detection with SOS alerts, and hands-free Bluetooth connectivity for calls and navigation — designed for safer and more enjoyable urban riding.",
+  image: "/images/BH51_NSO22.webp",
+  links: "https://livall.com/products/bh51m-nso-urban?variant=44858649477429",
+  price: "799kr",
+  feature: [
+    "Integrated JBL Bluetooth speakers for music and calls",
+    "Smart LED lighting with automatic brake and turn signals",
+    "Patented fall detection with SOS alert to emergency contacts"
+  ]
+},
+
+{
+  category: "vehicle",
+  title: "Ottocast Mini Slim Trådlös CarPlay & Android Autoadapter",
+  slug: "ottocast-mini-slim-wireless-carplay",
+  description: "A plug-and-play wireless adapter that lets you use Apple CarPlay and Android Auto in cars that normally need a wired connection — so your phone connects automatically via Bluetooth and Wi-Fi for a cable-free experience.",
+  image: "/images/ottocast_1.webp", 
+  links: "https://www.fyndiq.se/product/turn0product0", 
+  price: "431kr",
+  feature: [
+    "Enables wireless CarPlay & Android Auto",
+    "Plug-and-play USB form factor",
+    "Compatible with most vehicles supporting wired CarPlay/Android Auto"
+  ]
+},
+
+{
+  category: "vehicle",
+  title: "FNNEMGE 26800mAh Battery Starter",
+  slug: "battery-starter",
+  description: "A powerful portable battery jump starter with a 26800 mAh battery and up to 6000 A peak current — ideal for emergency starts on 12 V vehicles (cars, bikes, SUVs).",
+  image: "/images/Battery_Starter.jpg",
+  links: "https://www.amazon.se/dp/B0XXXXX",
+  price: "799kr",
+  feature: [
+    "High-capacity jump starter for vehicle batteries",
+    "Portable and rechargeable",
+    "Includes safety protections (reverse polarity, short-circuit)"
+  ]
+}
+
+
 ];
 
 export default gadgetDetails;
