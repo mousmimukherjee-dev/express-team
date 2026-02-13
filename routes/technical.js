@@ -1,18 +1,18 @@
 import express from 'express';
 import * as path from 'path';
+import gadgetDetails from '../data/gadget_details.js';
+import { categoryDescriptions } from '../data/categories.js';
 
 const technicalRouter = express.Router();
 const __dirname = path.resolve();
 
 technicalRouter.get('/', (req, res) => {
-  const allItems = req.app.locals.gadgetDetails;
-  const filteredItems = allItems.filter((item) => {
-    return item.category === 'tech';
-  });
   res.render(path.join(__dirname, '/views/pages/category'), {
+    pageType: 'tech',
     headTitle: 'Tech',
-    items: filteredItems,
     category: 'tech',
+    categoryContent: categoryDescriptions,
+    gadgetList: gadgetDetails,
   });
 });
 

@@ -1,19 +1,18 @@
 import express from 'express';
 import * as path from 'path';
+import gadgetDetails from '../data/gadget_details.js';
+import { categoryDescriptions } from '../data/categories.js';
 
 const vehicleRouter = express.Router();
 const __dirname = path.resolve();
 
 vehicleRouter.get('/', (req, res) => {
-  const allItems = req.app.locals.gadgetDetails;
-  const filteredItems = allItems.filter((item) => {
-    return item.category === 'vehicle';
-  });
-
   res.render(path.join(__dirname, '/views/pages/category'), {
+    pageType: 'vehicle',
     headTitle: 'Vehicle',
-    items: filteredItems,
     category: 'Vehicle',
+    categoryContent: categoryDescriptions,
+    gadgetList: gadgetDetails,
   });
 });
 
