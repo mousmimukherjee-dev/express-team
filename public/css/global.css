@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 html {
@@ -48,13 +48,14 @@ header {
   background: linear-gradient(90deg, #833ab4, #fd1d1d, #a445fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 1.2rem;
 }
 
 nav a {
   padding: 1rem;
   font-size: 1.5rem;
   text-decoration: none;
-  color: aliceblue;
+  color: #f5f1f3;
 }
 
 nav a:hover {
@@ -91,9 +92,18 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #fcdbee;
-  font-family: Arial, Helvetica, sans-serif;
+  color: snow;
   gap: 30px;
+}
+
+.hero_content h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.hero_content p {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
 }
 
 .homepage_body {
@@ -113,6 +123,7 @@ main {
 .homepage_header, .category_header {
   padding-bottom: 30px;
   color: #9c19f3;
+  font-size: 2rem;
 }
 
 .homepage_content, .category_content, .gadget_content {
@@ -123,6 +134,11 @@ main {
 }
 
 .homepage_description, .category_header {
+  line-height: 2.5rem;
+}
+
+.homepage_description, .category_description, .gadget_description {
+  font-size: 1.1rem;
   line-height: 2.5rem;
 }
 
@@ -137,8 +153,12 @@ main {
   color: #7e2a0c;
   letter-spacing: 2px;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   text-wrap: nowrap;
+}
+
+.feature_description {
+  font-size: 1rem;
 }
 
 .features {
@@ -201,7 +221,7 @@ main {
   width: 200px;
   padding: 10px 30px;
   color: white;
-  background-color: #F9FAFB;
+  background-color: rgba(162, 57, 148, 0.7);
   margin: 1rem;
   place-self: center;
 }
@@ -216,14 +236,14 @@ main {
   text-decoration: none;
   color: #1E2939;
   font-weight: bolder;
-  color: snow;
+  color: rgb(162, 57, 148);
 }
-
 
 .category_link:hover {
   box-shadow: 1px 1px 5px 1px #c0bebe;
-  background-color: rgba(162, 57, 148, 0.7);
+  background-color: #F8E7FA;
   cursor: pointer;
+  color: rgb(162, 57, 148);
 }
 
 .main_category, .main_gadget {
@@ -258,15 +278,11 @@ main {
   img {
     border-radius: 16px;
   }
-
-}
-
-.category_description {
-  font-size: 2rem;
 }
 
 .category_header {
   text-align: center;
+  margin-top: 30px;
 }
 
 .gadget_image {
@@ -278,14 +294,15 @@ main {
 
 }
 
-.gadget_desciption {
+.gadget_description {
   h1 {
+    font-size: 1.5rem;
     margin: 12px;
     text-align: center;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin: 16px;
   }
 
@@ -312,6 +329,26 @@ main {
     cursor: pointer;
   }
 
+  .gadget_sale {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .gadget_sale a {
+    padding: 0;
+    background-color: rgba(162, 57, 148, 0.7);
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+    .gadget_sale a:hover {
+      color: snow;
+  }
+
+  .gadget_sale span {
+    font-size: 1.2rem;
+  }
 
 }
 
@@ -324,7 +361,7 @@ main {
     right: 0;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    width: 35%;
+    width: 40%;
     height: 100vh;
     background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
     padding: 1rem;
@@ -335,15 +372,8 @@ main {
     font-size: 1rem;
     font-weight: 900;
     text-decoration: none;
-    background: linear-gradient(90deg, #ffd700, #ff8c00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  nav a:hover {
-    color: black;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
+    color: snow;
+    letter-spacing: 2px;
   }
 
   .close-button {
@@ -420,6 +450,14 @@ main {
     padding: 30px;
   }
 
+  .hero_content h1 {
+     font-size: 1.2rem;
+  }
+
+   .hero_content p {
+     font-size: 0.9rem;
+  }
+
   .homepage_body {
     display: flex;
     flex-grow: 1;
@@ -449,25 +487,32 @@ main {
 
   }
 
-  .category_description {
-    font-size: 1.5rem;
+  .category_description, .gadget_description {
+    font-size: 1.1rem;
     margin: 16px;
+  }
+
+  .category_header {
+    padding-bottom: 10px;
   }
 
   .gadget_image {
     margin-top: 12px;
   }
 
-  .gadget_desciption {
+  .gadget_description {
     a {
-      font-size: 1.5rem;
-      display: inline-block;
+      font-size: 0.9rem;
     }
 
     span {
-      font-size: 1.5rem;
-      display: inline-block;
+      font-size: 0.9rem;
     }
+  }
+
+  .gadget_sale {
+    gap: 30px;
+    align-items: center;
   }
 }
 
