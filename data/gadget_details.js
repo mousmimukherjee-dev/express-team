@@ -1,15 +1,5 @@
 const gadgetDetails = [
-  {
-    category: "tech",
-    title: "Smart Watch Pro",
-    subtitle: "Wearable Technology",
-    description: "Track fitness, notifications, and health metrics.",
-    image: "/images/sampleImage.jpg",
-    price: "1990kr",
-    tags: ["Tech", "Wearable"],
-    page: '/tech/smart-watch-pro',
-    slug: "smart-watch-pro",
-  },
+ 
   {
     category: "beauty",
     title: "FOREO BEAR-2",
@@ -157,11 +147,11 @@ const gadgetDetails = [
   {
   category: "vehicle",
   title: "Livall BH51M NSO Urban Bluetooth Smart Helmet",
-  slug: "bh51m-nso-urban",
+  slug: "urban-bluetooth-smart-helmet",
   description: "The LIVALL BH51M NSO Urban is a smart cycling helmet with integrated JBL sound, smart LED lighting (brake and turn signals), fall detection with SOS alerts, and hands-free Bluetooth connectivity for calls and navigation — designed for safer and more enjoyable urban riding.",
   image: "/images/BH51_NSO22.webp",
   links: "https://livall.com/products/bh51m-nso-urban?variant=44858649477429",
-  price: "varies by retailer",
+  price: "799kr",
   feature: [
     "Integrated JBL Bluetooth speakers for music and calls",
     "Smart LED lighting with automatic brake and turn signals",
